@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/stylesheets/postadd.css")
+    
+    .reg-box
+        .header    
+        h2(class="text-center") Post a Add
+        -if(flag == 1)
+            .alert.alert-danger(role="alert") #{message}
+        -if(flag == 0)
+            .alert.alert-success(role="alert") #{message}
+       
+        form(action="/newadd" method="POST" encType="multipart/form-data" class="text-center")
+            .form-group
+                label(for="name") Name 
+                input(type="text" name="name" class="form-control col-4 offset-4")
+            .form-group
+                label(for="capacity") Capacity
+                input(type="int" name="capacity" class="form-control col-4 offset-4")
+            .form-group
+                label(for="city") City
+                input(type="text" name="city" class="form-control col-4 offset-4")
+            .form-group
+                label(for="country") Country
+                input(type="text" name="country" class="form-control col-4 offset-4")
+            .form-group
+                label(for="address") Address
+                input(type="text" name="address" class="form-control col-4 offset-4")
+            .form-group
+                label(for="contact") Contact
+                input(type="int" name="contact" class="form-control col-4 offset-4")
+            .form-group
+                label(for="category") Category
+                form-control
+                .col-4.offset-4 
+                    select#category.custom-select(name="category")
+                        option(selected='') Select
+                        option(value='Room') Room 
+                        option(value='Farm House') Farm House   
+                        option(value='Lawn/Ground') Lawn/Ground
+                        option(value='Swimming Pool') Swimming Pool 
+                        option(value='Marquee') Marquee 
+            .form-group
+                label(for="description") Description
+                input(type="text" name="description" class="form-control col-4 offset-4")
+            .form-group
+            label(for="newimage") Upload Image
+                .input-group
+                    span.input-group-btn
+                    span.btn.btn-default.btn-file
+                        | Browse&mldr; 
+                        input#imgInp(type="file" name="newimage" accept="image/*")
+                button(type="submit" class="btn btn-primary") Submit

@@ -1,0 +1,17 @@
+body {
+    background-image: url('../images/post\ add\ bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+h1,h2,label{
+    margin: 5px 0 0 0px!important;
+    color:#6b6b6b !important;
+    /* mix-blend-mode: exclusion; */
+}
+
+.alert{
+    margin : 0 100px;
+}
